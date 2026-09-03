@@ -1,0 +1,1960 @@
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bordo: #5b1025;
+    --bordo-oscuro: #3c0717;
+    --bordo-claro: #7b2941;
+
+    --crema: #eee5d6;
+    --papel: #fffdf9;
+
+    --dorado: #b28a54;
+
+    --texto: #302326;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: var(--crema);
+    color: var(--texto);
+}
+
+
+/* =========================
+   PORTADA
+========================= */
+
+.portada {
+    min-height: 100svh;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 20px;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255,255,255,.7),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(255,255,255,.4),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #f0e9de,
+            #dfd2be
+        );
+}
+
+
+/* =========================
+   INICIALES
+========================= */
+
+.iniciales {
+    color: var(--bordo);
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 25px;
+    letter-spacing: 7px;
+    margin-bottom: 15px;
+
+    position: relative;
+    z-index: 3;
+}
+
+.iniciales span {
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 30px;
+    letter-spacing: 0;
+}
+
+
+/* =========================
+   SOBRE
+========================= */
+
+.sobre {
+    width: min(88vw, 370px);
+    aspect-ratio: 1.28;
+
+    position: relative;
+    cursor: pointer;
+
+    filter:
+        drop-shadow(
+            0 18px 22px
+            rgba(55, 15, 25, .22)
+        );
+
+    transition:
+        transform .4s ease;
+
+    z-index: 2;
+}
+
+.sobre:hover {
+    transform:
+        translateY(-5px)
+        rotate(-.5deg);
+}
+
+.sobre-fondo {
+    position: absolute;
+    inset: 0;
+
+    border-radius: 5px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #711d35,
+            #4b0b1d
+        );
+}
+
+
+/* =========================
+   CARTA
+========================= */
+
+.carta {
+    position: absolute;
+
+    width: 78%;
+    height: 76%;
+
+    left: 11%;
+    top: 8%;
+
+    z-index: 3;
+
+    background: var(--papel);
+
+    border-radius: 4px;
+
+    padding: 25px 12px;
+
+    text-align: center;
+
+    box-shadow:
+        0 5px 15px
+        rgba(0,0,0,.12);
+
+    transform: rotate(-2deg);
+
+    transition:
+        top 1s cubic-bezier(.2,.8,.2,1),
+        transform 1s cubic-bezier(.2,.8,.2,1);
+}
+
+.texto-manuscrito {
+    margin: 5px 0 2px;
+
+    color: var(--bordo);
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 34px;
+}
+
+.carta h1 {
+    margin: 0 0 14px;
+
+    color: #241a1b;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 31px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.carta button {
+    background: transparent;
+
+    border: 1.5px solid #3b3030;
+
+    border-radius: 30px;
+
+    padding: 8px 20px;
+
+    color: #241a1b;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    cursor: pointer;
+
+    transition:
+        background .3s ease,
+        color .3s ease;
+}
+
+.carta button:hover {
+    background: #3b3030;
+    color: white;
+}
+
+.carta button span {
+    margin-left: 5px;
+}
+
+
+/* =========================
+   SOLAPA
+========================= */
+
+.solapa {
+    position: absolute;
+    inset: 0;
+
+    z-index: 5;
+
+    background:
+        linear-gradient(
+            180deg,
+            #7a233b,
+            #5a1025
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 55%
+        );
+
+    transform-origin: top;
+
+    transition:
+        transform 1s
+        cubic-bezier(.2,.8,.2,1);
+}
+
+
+/* =========================
+   FRENTE DEL SOBRE
+========================= */
+
+.sobre-frente {
+    position: absolute;
+    inset: 0;
+
+    z-index: 4;
+
+    background:
+        linear-gradient(
+            155deg,
+            #68182d,
+            #4b0b1d
+        );
+
+    clip-path:
+        polygon(
+            0 40%,
+            50% 72%,
+            100% 40%,
+            100% 100%,
+            0 100%
+        );
+}
+
+
+/* =========================
+   SELLO
+========================= */
+
+.sello {
+    position: absolute;
+
+    z-index: 6;
+
+    left: 50%;
+    bottom: 16%;
+
+    transform:
+        translateX(-50%);
+
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 2px;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #a05b60,
+            #5d1726 70%
+        );
+
+    color: #e8c48b;
+
+    border:
+        2px solid
+        rgba(232,196,139,.75);
+
+    box-shadow:
+        0 3px 8px
+        rgba(0,0,0,.2),
+
+        inset 0 0 0 1px
+        rgba(255,255,255,.08);
+}
+
+.inicial-sello {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.ampersand-sello {
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 18px;
+    line-height: 1;
+
+    position: relative;
+    top: 2px;
+
+    opacity: .9;
+}
+
+
+/* =========================
+   ABRIR SOBRE
+========================= */
+
+.portada.abierta .solapa {
+    transform:
+        rotateX(180deg);
+
+    z-index: 2;
+}
+
+.portada.abierta .carta {
+    top: -18%;
+
+    transform:
+        rotate(-1deg);
+}
+
+.portada.ocultar {
+    animation:
+        desaparecer .8s forwards;
+}
+
+@keyframes desaparecer {
+
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
+/* =========================
+   TEXTO INFERIOR
+========================= */
+
+.indicacion {
+    color: #625555;
+
+    margin-top: 20px;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    position: relative;
+
+    z-index: 3;
+}
+
+
+/* =========================
+   DIAPOSITIVAS
+========================= */
+
+.diapositiva {
+    min-height: 100svh;
+    width: 100%;
+
+    display: grid;
+    place-items: center;
+
+    padding: 60px 20px;
+
+    scroll-snap-align: start;
+}
+
+
+/* =========================
+   CONTENIDO
+========================= */
+
+.contenido {
+    width:
+        min(100%, 470px);
+
+    text-align: center;
+}
+
+.subtitulo {
+    font-size: 11px;
+    letter-spacing: 4px;
+    opacity: .8;
+}
+
+.contenido h2 {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 39px;
+
+    line-height: 1.15;
+
+    font-weight: 500;
+
+    margin:
+        28px 0 15px;
+}
+
+.contenido p {
+    line-height: 1.7;
+}
+
+
+/* =========================
+   INVITACIÓN
+========================= */
+
+.invitacion {
+    background:
+        linear-gradient(
+            rgba(91,16,37,.97),
+            rgba(91,16,37,.97)
+        );
+
+    color: #f8f0e5;
+}
+
+.adorno {
+    color: var(--dorado);
+
+    letter-spacing: 8px;
+
+    margin:
+        20px 0 25px;
+}
+
+
+/* =========================
+   ALIANZAS
+========================= */
+
+.alianzas {
+    position: relative;
+
+    width: 130px;
+    height: 75px;
+
+    margin:
+        0 auto 28px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.alianza {
+    position: absolute;
+
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    border:
+        5px solid #c8c8c8;
+
+    background: transparent;
+
+    box-shadow:
+        0 2px 4px
+        rgba(0,0,0,.20),
+
+        inset 1px 1px 2px
+        rgba(255,255,255,.9);
+
+    overflow: visible;
+}
+
+.alianza::before {
+    content: "";
+
+    position: absolute;
+
+    width: 16px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.9);
+
+    top: 4px;
+    left: 8px;
+
+    transform:
+        rotate(-25deg);
+
+    filter:
+        blur(.6px);
+
+    animation:
+        brilloAlianza
+        3s ease-in-out infinite;
+}
+
+.alianza-1,
+.alianza-2 {
+    opacity: 0;
+    animation: none;
+}
+
+.diapositiva.visible .alianza-1 {
+    animation:
+        acercarIzquierda
+        1.5s
+        ease-out
+        forwards;
+}
+
+.diapositiva.visible .alianza-2 {
+    animation:
+        acercarDerecha
+        1.5s
+        ease-out
+        forwards;
+}
+
+@keyframes acercarIzquierda {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(-45px)
+            rotate(-15deg);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(-15px)
+            rotate(-8deg);
+    }
+}
+
+@keyframes acercarDerecha {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(45px)
+            rotate(15deg);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(15px)
+            rotate(8deg);
+    }
+}
+
+@keyframes brilloAlianza {
+
+    0%,
+    100% {
+        opacity: .25;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   FECHA
+========================= */
+
+.fecha {
+    margin-top: 35px;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    color: var(--dorado);
+}
+
+.hora {
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   CONTADOR
+========================= */
+
+.diapositiva-contador {
+    background: var(--crema);
+    color: var(--texto);
+}
+
+.contador {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 8px;
+}
+
+.tiempo {
+    border:
+        1px solid
+        rgba(178,138,84,.65);
+
+    padding: 14px 4px;
+
+    border-radius: 8px;
+
+    background:
+        rgba(255,255,255,.45);
+}
+
+.tiempo strong {
+    display: block;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 27px;
+
+    font-weight: 500;
+}
+
+.tiempo small {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    opacity: .75;
+}
+
+
+/* =========================
+   FOTOS
+========================= */
+
+.diapositiva-foto {
+    background:
+        linear-gradient(
+            145deg,
+            #eee5d6,
+            #dfd2be
+        );
+}
+
+.marco-foto {
+    width:
+        min(88vw, 360px);
+
+    padding: 12px;
+
+    background: #fffdf9;
+
+    border:
+        1px solid
+        var(--dorado);
+
+    box-shadow:
+        0 12px 30px
+        rgba(0,0,0,.22);
+
+    position: relative;
+}
+
+.marco-foto::before,
+.marco-foto::after {
+    content: "✦";
+
+    position: absolute;
+
+    color: var(--dorado);
+
+    font-size: 18px;
+
+    z-index: 2;
+}
+
+.marco-foto::before {
+    top: 5px;
+    left: 8px;
+}
+
+.marco-foto::after {
+    bottom: 5px;
+    right: 8px;
+}
+
+.foto-placeholder {
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #eee5d6;
+
+    border:
+        1px solid
+        rgba(178,138,84,.45);
+
+    overflow: hidden;
+
+    color: var(--bordo);
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 16px;
+
+    text-align: center;
+
+    letter-spacing: 1px;
+}
+
+.foto-placeholder span {
+    padding: 20px;
+}
+
+.foto-placeholder img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =========================
+   FOTOS DETALLADAS
+========================= */
+
+.contenido-foto {
+    width:
+        min(100%, 440px);
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* FOTO 1 */
+
+.foto-uno {
+    background:
+        linear-gradient(
+            145deg,
+            #eee5d6,
+            #dfd2be
+        );
+
+    color: var(--texto);
+}
+
+.marco-vertical {
+    width:
+        min(82vw, 330px);
+
+    margin-top: 18px;
+
+    transform:
+        rotate(-1deg);
+}
+
+
+/* FOTO 2 */
+
+.foto-dos {
+    background: var(--bordo);
+
+    color: #f8f0e5;
+}
+
+.marco-editorial {
+    width:
+        min(82vw, 330px);
+
+    padding: 15px;
+
+    margin-top: 25px;
+
+    border:
+        1px solid
+        rgba(232,196,139,.8);
+
+    transform:
+        rotate(1deg);
+}
+
+.foto-dos .marco-foto {
+    box-shadow:
+        0 18px 40px
+        rgba(0,0,0,.30);
+}
+
+.detalle-superior {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: #e8c48b;
+}
+
+.linea-dorada {
+    width: 70px;
+    height: 1px;
+
+    background: var(--dorado);
+
+    margin-top: 24px;
+}
+
+.frase-manuscrita {
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 31px;
+
+    color: #e8c48b;
+
+    margin-top: 12px;
+}
+
+
+/* FOTO 3 */
+
+.foto-tres {
+    background:
+        linear-gradient(
+            145deg,
+            #f4eee5,
+            #e1d4c1
+        );
+
+    color: var(--texto);
+}
+
+.marco-romantico {
+    width:
+        min(84vw, 340px);
+
+    padding: 12px;
+
+    transform:
+        rotate(-1deg);
+}
+
+.frase-foto {
+    margin-top: 24px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 21px;
+
+    line-height: 1.35;
+
+    letter-spacing: .5px;
+}
+
+.frase-final {
+    margin-top: 25px;
+    font-size: 23px;
+}
+
+.detalle-foto {
+    margin-top: 14px;
+
+    color: var(--dorado);
+
+    letter-spacing: 7px;
+
+    font-size: 15px;
+}
+
+.foto-tres .detalle-foto {
+    font-size: 20px;
+}
+
+
+/* =========================
+   BOTONES DE UBICACIÓN
+========================= */
+
+.boton-ubicacion {
+    display: inline-block;
+
+    margin-top: 18px;
+
+    padding: 11px 24px;
+
+    border:
+        1px solid
+        var(--dorado);
+
+    border-radius: 30px;
+
+    color: #e9d9c5;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    transition:
+        background .3s ease,
+        color .3s ease;
+}
+
+
+/* BOTONES SOBRE FONDO CLARO */
+
+.carpeta-fotos .boton-ubicacion,
+.playlist .boton-ubicacion,
+.mensaje .boton-ubicacion {
+    color: #3a2025;
+}
+
+
+/* EFECTO AL TOCAR / PASAR */
+
+.boton-ubicacion:hover {
+    background: var(--dorado);
+    color: #fff;
+}
+
+
+/* =========================
+   TEXTO BÍBLICO
+========================= */
+
+.texto-biblico {
+    background:
+        linear-gradient(
+            rgba(60,7,23,.98),
+            rgba(60,7,23,.98)
+        );
+
+    color: #f8f0e5;
+}
+
+.texto-biblico h2 {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 30px;
+
+    line-height: 1.45;
+
+    font-style: italic;
+
+    max-width: 420px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.referencia {
+    color: var(--dorado);
+
+    letter-spacing: 2px;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   DRESS CODE
+========================= */
+
+.dress-code {
+    background: var(--bordo);
+
+    color: #f8f0e5;
+}
+
+.aviso {
+    color: var(--dorado);
+
+    font-weight: 500;
+}
+
+
+/* PALETA DE COLORES */
+
+.paleta-evitar {
+    margin-top: 28px;
+}
+
+.colores-evitar {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    margin:
+        18px 0 10px;
+}
+
+.color-evitar {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+.circulo-color {
+    width: 44px;
+    height: 44px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        var(--dorado);
+
+    box-shadow:
+        0 4px 10px
+        rgba(0,0,0,.18);
+}
+
+.circulo-color.blanco {
+    background: #fffdf9;
+}
+
+.circulo-color.bordo {
+    background: var(--bordo);
+}
+
+.color-evitar small {
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+}
+
+.texto-colores {
+    font-size: 10px;
+
+    opacity: .75;
+
+    margin-top: 12px;
+}
+
+
+/* =========================
+   TARJETA
+========================= */
+
+.tarjeta {
+    background: var(--crema);
+
+    color: var(--texto);
+}
+
+.precios {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 22px;
+
+    margin-top: 30px;
+}
+
+.precios div {
+    padding: 18px;
+
+    border:
+        1px solid
+        rgba(178,138,84,.65);
+
+    border-radius: 10px;
+
+    background:
+        rgba(255,255,255,.45);
+}
+
+.precios strong {
+    display: block;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 34px;
+
+    color: var(--bordo);
+}
+
+.precios small {
+    display: block;
+
+    margin-top: 5px;
+
+    letter-spacing: 2px;
+
+    font-size: 9px;
+}
+
+
+/* =========================
+   REGALOS
+========================= */
+
+.regalos {
+    background: var(--bordo);
+
+    color: #f8f0e5;
+}
+
+.datos-regalo {
+    margin-top: 25px;
+}
+
+.datos-regalo p {
+    margin: 15px 0;
+
+    padding: 14px;
+
+    border:
+        1px solid
+        rgba(178,138,84,.55);
+
+    border-radius: 8px;
+}
+
+.datos-regalo strong {
+    color: var(--dorado);
+}
+
+
+/* =========================
+   CARPETA / PLAYLIST / MENSAJE
+========================= */
+
+.carpeta-fotos,
+.playlist,
+.mensaje {
+    background: var(--crema);
+
+    color: var(--texto);
+}
+
+
+/* =========================
+   ASISTENCIA
+========================= */
+
+.asistencia {
+    background: var(--bordo);
+
+    color: #f8f0e5;
+}
+
+
+/* =========================
+   CIERRE
+========================= */
+
+.cierre {
+    background:
+        linear-gradient(
+            145deg,
+            #4b0b1d,
+            #7b2941
+        );
+
+    color: #f8f0e5;
+}
+
+.cierre h2 {
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 55px;
+
+    font-weight: 400;
+
+    color: #e8c48b;
+}
+
+
+/* =========================
+   CELULARES PEQUEÑOS
+========================= */
+
+@media (max-width: 360px) {
+
+    .texto-manuscrito {
+        font-size: 29px;
+    }
+
+    .carta h1 {
+        font-size: 27px;
+    }
+
+    .tiempo strong {
+        font-size: 23px;
+    }
+
+    .flores {
+        width: 160px;
+        height: 200px;
+    }
+
+    .rosa {
+        width: 36px;
+        height: 36px;
+    }
+
+    .alianzas {
+        width: 115px;
+        height: 70px;
+
+        margin-bottom: 24px;
+    }
+
+    .alianza {
+        width: 50px;
+        height: 50px;
+
+        border-width: 4px;
+    }
+
+    .marco-foto {
+        width: 86vw;
+        padding: 9px;
+    }
+
+    .foto-placeholder {
+        font-size: 14px;
+    }
+
+    .contenido h2 {
+        font-size: 34px;
+    }
+
+    .marco-vertical,
+    .marco-editorial,
+    .marco-romantico {
+        width: 86vw;
+    }
+
+    .circulo-color {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+/* =========================
+   ANIMACIONES
+========================= */
+
+.contenido > * {
+    opacity: 0;
+    transform: translateY(25px);
+}
+
+.diapositiva.visible .contenido > * {
+    animation: aparecerSuave 1s ease forwards;
+}
+
+.contenido > *:nth-child(2) {
+    animation-delay: .15s;
+}
+
+.contenido > *:nth-child(3) {
+    animation-delay: .3s;
+}
+
+.contenido > *:nth-child(4) {
+    animation-delay: .45s;
+}
+
+@keyframes aparecerSuave {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+
+/* 1. Ramo de flores delicadas en línea fina dorada */
+.ramo-delicado {
+    width: 140px;
+    height: 45px;
+    margin: 20px auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="none" stroke="%23b28a54" stroke-width="1.5" stroke-linecap="round"><path d="M100 50 C100 30, 95 15, 80 10 M100 50 C100 30, 105 15, 120 10"/><circle cx="80" cy="10" r="3" fill="%23b28a54"/><circle cx="120" cy="10" r="3" fill="%23b28a54"/><path d="M95 35 C85 30, 70 32, 65 25 C75 22, 90 28, 95 35 M105 35 C115 30, 130 32, 135 25 C125 22, 110 28, 105 35"/><path d="M100 45 Q100 25 100 5"/><circle cx="100" cy="5" r="4" fill="%23b28a54"/></svg>');
+}
+
+/* 2. Divisor mixto: Líneas doradas con flor geométrica central */
+.divisor-mixto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 22px auto;
+    width: 85%;
+    max-width: 280px;
+}
+
+.divisor-mixto::before,
+.divisor-mixto::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--dorado), transparent);
+}
+
+.icono-flor-centro {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23b28a54" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 5 C10 8, 10 9, 12 9 C14 9, 14 8, 12 5 M12 19 C10 16, 10 15, 12 15 C14 15, 14 16, 12 19 M5 12 C8 10, 9 10, 9 12 C9 14, 8 14, 5 12 M19 12 C16 10, 15 10, 15 12 C15 14, 16 14, 19 12"/></svg>');
+}
+
+/* 3. Detalle de esquina en los marcos de fotos */
+.marco-foto {
+    position: relative;
+}
+
+.marco-foto::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    width: 48px;
+    height: 48px;
+    z-index: 3;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="none" stroke="%23b28a54" stroke-width="1.3"><path d="M2 48 L2 15 C2 5, 12 2, 35 2 M2 20 C10 20, 18 12, 18 2 M2 32 C15 32, 28 20, 28 2"/><circle cx="2" cy="2" r="3" fill="%23b28a54"/></svg>');
+}
+/* =========================================
+   SOLUCIÓN DE VISIBILIDAD Y SOBRE
+========================================= */
+
+/* Permitir scroll general en la página */
+html, body {
+    overflow-x: hidden;
+    overflow-y: auto !important;
+    height: auto !important;
+}
+
+/* Forzar que el texto y las secciones sean visibles */
+.diapositiva {
+    min-height: 100vh;
+    visibility: visible !important;
+}
+
+.contenido {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.contenido > * {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
+
+/* Ajustes del sobre para que se vea bien cerrado y proporcionado */
+.sobre {
+    position: relative;
+    width: min(90vw, 340px);
+    height: 220px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.carta {
+    padding: 15px 20px;
+    text-align: center;
+}
+
+/* Ilustración floral delicada en carta y divisores */
+.ramo-delicado {
+    width: 120px;
+    height: 35px;
+    margin: 10px auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="none" stroke="%23b28a54" stroke-width="1.5" stroke-linecap="round"><path d="M100 50 C100 30, 95 15, 80 10 M100 50 C100 30, 105 15, 120 10"/><circle cx="80" cy="10" r="3" fill="%23b28a54"/><circle cx="120" cy="10" r="3" fill="%23b28a54"/><path d="M95 35 C85 30, 70 32, 65 25 C75 22, 90 28, 95 35 M105 35 C115 30, 130 32, 135 25 C125 22, 110 28, 105 35"/><path d="M100 45 Q100 25 100 5"/><circle cx="100" cy="5" r="4" fill="%23b28a54"/></svg>');
+}
+
+.divisor-mixto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 18px auto;
+    width: 80%;
+    max-width: 250px;
+}
+
+.divisor-mixto::before,
+.divisor-mixto::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #b28a54, transparent);
+}
+
+.icono-flor-centro {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23b28a54" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 5 C10 8, 10 9, 12 9 C14 9, 14 8, 12 5 M12 19 C10 16, 10 15, 12 15 C14 15, 14 16, 12 19 M5 12 C8 10, 9 10, 9 12 C9 14, 8 14, 5 12 M19 12 C16 10, 15 10, 15 12 C15 14, 16 14, 19 12"/></svg>');
+}
+/* =========================================
+   CONTRASTE DE BOTONES SEGÚN FONDO
+========================================= */
+
+/* Estilo por defecto para botones en fondos claros (Civil, Ceremonia, etc.) */
+.diapositiva .boton-ubicacion {
+    background-color: #800020 !important; /* Fondo bordó */
+    color: #ffffff !important;           /* Texto blanco legible */
+    border: 1px solid #800020 !important;
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.diapositiva .boton-ubicacion:hover {
+    background-color: #5c0017 !important;
+    color: #ffffff !important;
+}
+
+/* Conservar el estilo especial únicamente en las diapositivas de fondo bordó / oscuro */
+.diapositiva-bordo .boton-ubicacion,
+.diapositiva.oscura .boton-ubicacion,
+.diapositiva.cierre .boton-ubicacion {
+    background-color: transparent !important;
+    color: #f7f3ee !important;
+    border: 1px solid #b28a54 !important; /* Borde dorado */
+}
+
+.diapositiva-bordo .boton-ubicacion:hover,
+.diapositiva.oscura .boton-ubicacion:hover,
+.diapositiva.cierre .boton-ubicacion:hover {
+    background-color: #b28a54 !important;
+    color: #800020 !important;
+}
+/* =========================================
+   DISEÑO DE SOBRE BORDÓ REALISTA (TIPO IMAGEN)
+========================================= */
+
+.sobre-contenedor {
+    position: relative;
+    width: min(85vw, 320px);
+    height: 280px;
+    margin: 40px auto 20px auto;
+    cursor: pointer;
+}
+
+/* Solapa curva del fondo */
+.solapa-trasera {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 80px;
+    background-color: #6b1d2f; /* Bordó medio */
+    border-radius: 80px 80px 0 0;
+    z-index: 1;
+}
+
+/* Tarjeta blanca que asoma */
+.carta {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 82%;
+    background-color: #ffffff;
+    padding: 25px 15px 35px 15px;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    z-index: 2;
+    box-sizing: border-box;
+}
+
+.clip-decorativo {
+    position: absolute;
+    top: -8px;
+    right: 25px;
+    width: 12px;
+    height: 22px;
+    border: 2px solid #a8a8a8;
+    border-radius: 6px;
+}
+
+.carta .texto-manuscrito {
+    font-family: 'Great Vibes', cursive;
+    color: #6b1d2f;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.carta h1 {
+    font-family: 'Cormorant Garamond', serif;
+    color: #1a1a1a;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    margin: 5px 0 15px 0;
+    font-weight: 600;
+}
+
+.btn-entrar {
+    background-color: transparent;
+    border: 1px solid #6b1d2f;
+    color: #6b1d2f;
+    padding: 6px 16px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Solapas de al frente del sobre bordó */
+.solapas-frente {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 180px;
+    background-color: #521221; /* Bordó oscuro */
+    clip-path: polygon(0 20%, 50% 55%, 100% 20%, 100% 100%, 0 100%);
+    z-index: 3;
+    filter: drop-shadow(0 -2px 5px rgba(0,0,0,0.2));
+}
+
+/* Sello de cera */
+.sello-cera {
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 48px;
+    height: 48px;
+    background: radial-gradient(circle, #7a2235 0%, #4a0e1c 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    z-index: 4;
+    border: 1px solid #8c2b40;
+}
+
+.sello-cera span {
+    color: #d4af37; /* Dorado */
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.1rem;
+}
+/* Ajuste de iniciales dentro del sello de cera */
+.sello-cera {
+    width: 52px;            /* Le damos un poquito más de diámetro */
+    height: 52px;
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+.sello-cera span {
+    font-size: 0.85rem;     /* Achicamos la letra para que la F no sobresalga */
+    letter-spacing: -0.5px; /* Comprimimos levemente el texto */
+    white-space: nowrap;    /* Evita saltos de línea */
+    text-align: center;
+}
+/* =========================================
+   DISEÑO ELEGANTE DE TARJETA DE PAGO
+========================================= */
+
+.tarjeta-pase {
+    background-color: #ffffff;
+    border: 1px solid #d4c3b3;
+    border-radius: 12px;
+    padding: 25px 20px;
+    max-width: 380px;
+    margin: 20px auto 0 auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.precios-grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #d4c3b3;
+}
+
+.item-precio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item-precio .monto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #800020;
+}
+
+.item-precio .etiqueta {
+    font-size: 0.75rem;
+    color: #666666;
+    letter-spacing: 1px;
+    margin-top: 4px;
+}
+
+.separador-vertical {
+    width: 1px;
+    height: 40px;
+    background-color: #d4c3b3;
+}
+
+.datos-pago {
+    padding-top: 18px;
+    text-align: center;
+}
+
+.datos-pago p {
+    font-size: 0.9rem;
+    color: #444444;
+    margin: 6px 0;
+}
+
+.datos-pago span {
+    color: #800020;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   ANIMACIONES SÚPER NOTORIAS E ITERATIVAS
+========================================= */
+
+/* Estado inicial: los elementos están más abajo, achicados y transparentes */
+.diapositiva .contenido > * {
+    opacity: 0;
+    transform: translateY(60px) scale(0.92);
+    transition: opacity 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                transform 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    will-change: opacity, transform;
+}
+
+/* Estado visible: suben con un ligero rebote fluido */
+.diapositiva.visible .contenido > * {
+    opacity: 1 !important;
+    transform: translateY(0) scale(1) !important;
+}
+
+/* Retardo en cascada bien marcado entre cada elemento */
+.diapositiva.visible .contenido > *:nth-child(1) { transition-delay: 0.1s; }
+.diapositiva.visible .contenido > *:nth-child(2) { transition-delay: 0.25s; }
+.diapositiva.visible .contenido > *:nth-child(3) { transition-delay: 0.4s; }
+.diapositiva.visible .contenido > *:nth-child(4) { transition-delay: 0.55s; }
+.diapositiva.visible .contenido > *:nth-child(5) { transition-delay: 0.7s; }
+.diapositiva.visible .contenido > *:nth-child(6) { transition-delay: 0.85s; }
+/* =========================================
+   SUPER ITERACIÓN Y DINAMISMO CONSTANTE (FIXED)
+========================================= */
+
+/* 1. ANIMACIONES DE FLOTACIÓN Y PULSO */
+@keyframes flotarSuave {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(1deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* Flotación exclusiva para el sello manteniendo el centrado horizontal absoluto */
+@keyframes flotarSelloCentrado {
+    0% { transform: translateX(-50%) translateY(0px); }
+    50% { transform: translateX(-50%) translateY(-6px); }
+    100% { transform: translateX(-50%) translateY(0px); }
+}
+
+@keyframes pulsoBoton {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(128, 0, 32, 0.4); }
+    70% { transform: scale(1.03); box-shadow: 0 0 0 10px rgba(128, 0, 32, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(128, 0, 32, 0); }
+}
+
+/* Flotación suave en elementos generales */
+.icono-flor-centro, 
+.marco-foto,
+.sello-alianzas {
+    animation: flotarSuave 4s ease-in-out infinite;
+}
+
+/* Pulso interactivo en botones y sobre */
+.boton-ubicacion, 
+.btn-entrar,
+.sobre-contenedor {
+    animation: pulsoBoton 2.5s infinite;
+}
+
+/* 2. CORRECCIÓN Y AGRANDADO DEL SELLO DE CERA */
+.sello-cera {
+    position: absolute;
+    bottom: 38px;
+    left: 50%;
+    width: 60px;                     /* Tamaño ampliado para mejor lectura */
+    height: 60px;
+    background: radial-gradient(circle, #7a2235 0%, #4a0e1c 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    z-index: 4;
+    border: 1px solid #8c2b40;
+    box-sizing: border-box;
+    padding: 0;
+    animation: flotarSelloCentrado 4s ease-in-out infinite; /* Centrado + Flotación */
+}
+
+.sello-cera span {
+    color: #d4af37;                  /* Dorado */
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;              /* Letra más grande y legible */
+    font-weight: 700;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    text-align: center;
+    line-height: 1;
+}
+
+/* 3. REANIMACIÓN EXTREMA AL SCROLLEAR */
+.diapositiva .contenido > * {
+    opacity: 0;
+    transform: translateY(80px) scale(0.85) rotate(-2deg);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform;
+}
+
+/* Entrada en pantalla */
+.diapositiva.visible .contenido > * {
+    opacity: 1 !important;
+    transform: translateY(0) scale(1) rotate(0deg) !important;
+}
+
+/* Cascada con retardo dinámico */
+.diapositiva.visible .contenido > *:nth-child(1) { transition-delay: 0.1s; }
+.diapositiva.visible .contenido > *:nth-child(2) { transition-delay: 0.22s; }
+.diapositiva.visible .contenido > *:nth-child(3) { transition-delay: 0.35s; }
+.diapositiva.visible .contenido > *:nth-child(4) { transition-delay: 0.48s; }
+.diapositiva.visible .contenido > *:nth-child(5) { transition-delay: 0.6s; }
+.diapositiva.visible .contenido > *:nth-child(6) { transition-delay: 0.72s; }
+/* Esquineros florales para fotos */
+.marco-foto::before {
+    content: "❀";
+    position: absolute;
+    top: 6px;
+    left: 8px;
+    color: #b28a54;
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+.marco-foto::after {
+    content: "❀";
+    position: absolute;
+    bottom: 6px;
+    right: 8px;
+    color: #b28a54;
+    font-size: 16px;
+    opacity: 0.8;
+}
+/* =========================================
+   AJUSTE DE FLORES EN ESQUINAS
+========================================= */
+
+/* 1. Asegurar que las secciones claras sirvan de marco */
+.diapositiva-contador,
+.tarjeta,
+.carpeta-fotos,
+.playlist,
+.mensaje {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* 2. Controlar el tamaño real de las imágenes */
+.flor-esquina {
+    position: absolute !important;
+    width: 120px !important; /* Tamaño controlado para pantallas de computadora */
+    max-width: 30vw !important;
+    height: auto !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+    opacity: 0.9 !important;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12));
+}
+
+/* 3. Posicionar en los bordes de la sección */
+.flor-top-left {
+    top: -10px !important;
+    left: -10px !important;
+}
+
+.flor-bottom-right {
+    bottom: -10px !important;
+    right: -10px !important;
+}
+
+/* 4. Reducir tamaño en celulares para que no tapen los textos */
+@media (max-width: 480px) {
+    .flor-esquina {
+        width: 85px !important;
+    }
+    
+    .flor-top-left {
+        top: -5px !important;
+        left: -5px !important;
+    }
+
+    .flor-bottom-right {
+        bottom: -5px !important;
+        right: -5px !important;
+    }
+}
